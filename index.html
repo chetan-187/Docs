@@ -10,13 +10,21 @@
 <body>
     <h1>Doc</h1>
     <div id="message"></div>
-    <button onclick="handleClick()">Get Data</button>
+    <button onclick="handleClick()">Check Login</button>
 </body>
 <script>
 
     const handleClick = () => {
-        console.log("User ",document.cookie)
+        window.parent.postMessage({ type: 'checkLogin' }, 'https://app-one-lyart.vercel.app');
     }
+
+    window.addEventListener('message', (event) => {
+    if (event.origin === 'https://app-one-lyart.vercel.app' && event.data.type === 'checkLoginResponse') {
+      const user = event.data.user;
+
+      console.log('Logged in user:', user);
+    }
+  });
 </script>
 
 </html>
