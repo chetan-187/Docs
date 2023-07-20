@@ -35,7 +35,7 @@
       }
     });
   
-    function checkLogin() {
+    function handleClick() {
       // Send a postMessage request to app.net.ai to check if the user is authenticated
       window.parent.postMessage({ type: 'checkLogin' }, 'https://app-one-lyart.vercel.app');
     }
