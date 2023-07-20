@@ -13,18 +13,32 @@
     <button onclick="handleClick()">Check Login</button>
 </body>
 <script>
-
-    const handleClick = () => {
-        window.parent.postMessage({ type: 'checkLogin' }, 'https://app-one-lyart.vercel.app');
-    }
-
+    // Listen for postMessage requests from the allowed origin (app.net.ai)
     window.addEventListener('message', (event) => {
-    if (event.origin === 'https://app-one-lyart.vercel.app' && event.data.type === 'checkLoginResponse') {
-      const user = event.data.user;
-
-      console.log('Logged in user:', user);
+      if (event.origin === 'https://app-one-lyart.vercel.app') {
+        // Process the message and respond accordingly
+        if (event.data.type === 'checkLogin') {
+          // Read the user data from the SameSite cookie
+          const userCookie = document.cookie
+            .split('; ')
+            .find((cookie) => cookie.startsWith('user='));
+          if (userCookie) {
+            const userData = JSON.parse(userCookie.split('=')[1]);
+  
+            // Respond to the app.net.ai origin with the user data
+            event.source.postMessage(
+              { type: 'checkLoginResponse', user: userData },
+              event.origin
+            );
+          }
+        }
+      }
+    });
+  
+    function checkLogin() {
+      // Send a postMessage request to app.net.ai to check if the user is authenticated
+      window.parent.postMessage({ type: 'checkLogin' }, 'https://app-one-lyart.vercel.app');
     }
-  });
-</script>
+  </script>
 
 </html>
