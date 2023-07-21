@@ -21,7 +21,7 @@
           // Read the user data from the SameSite cookie
           const userCookie = document.cookie
             .split('; ')
-            .find((cookie) => cookie.startsWith('user='));
+            .find((cookie) => cookie.startsWith('UserId='));
           if (userCookie) {
             const userData = JSON.parse(userCookie.split('=')[1]);
   
