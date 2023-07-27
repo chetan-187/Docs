@@ -4,14 +4,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doc</title>
-    <script src="https://storage.googleapis.com/zipy-dev-sdk/Beta.Session.Merging.SDK/zipy.min.umd.js" crossorigin="anonymous"></script> 
-    <script> window.zipy && window.zipy.init('8b4470bc', '.vercel.app');</script>
+    <title>Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f1f1f1;
+        }
+
+        h1 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+
+        p {
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        input, textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+
+        .tip-section {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .tip-title {
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .tip-content {
+            color: #555;
+        }
+
+        .feedback-form-container {
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 40%;
+            z-index: 999;
+        }
+
+        .feedback-form {
+            max-width: 300px;
+        }
+
+        .feedback-form label {
+            display: inline-block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .feedback-form input[type="checkbox"] {
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        .feedback-form textarea {
+            resize: vertical;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .feedback-form button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: block;
+            margin-top: 10px;
+            margin-left: auto;
+        }
+
+        .feedback-form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <!-- <script src="https://cdn.lr-ingest.com/LogRocket.min.js" crossorigin="anonymous"></script>
+    <script>window.LogRocket && window.LogRocket.init('jknouo/origami', {
+        rootHostname: 'example.com',
+    });
+    </script> -->
 </head>
 
 <body>
-    <h1>Doc</h1>
-    <div id="message"></div>
-    <button >Login Button</button>
+    <h1>Best Practices While Coding</h1>
+    <p>
+        Welcome to the documentation on coding best practices. Following these practices can help improve the quality,
+        maintainability, and efficiency of your code.
+    </p>
+
+    <div class="tip-section">
+        <div class="tip-title">Code Formatting</div>
+        <div class="tip-content">
+            Consistent code formatting enhances readability and makes collaboration easier. Follow a standard
+            indentation style and choose between spaces or tabs.
+        </div>
+    </div>
+
+    <div class="tip-section">
+        <div class="tip-title">Meaningful Variable and Function Names</div>
+        <div class="tip-content">
+            Use descriptive and meaningful names for variables, functions, and classes. This helps others (and
+            yourself) understand the purpose and functionality of the code.
+        </div>
+    </div>
+
+    <div class="tip-section">
+        <div class="tip-title">Testing</div>
+        <div class="tip-content">
+            Write automated tests to verify the correctness of your code. Test-driven development (TDD) can help ensure
+            that
+            your code meets the specified requirements.
+        </div>
+    </div>
+
+    <!-- Add more tips in similar boxes -->
+
+    <div class="feedback-form-container">
+        <div class="feedback-form">
+            <h2>Feedback Form</h2>
+            <p>We would love to hear your thoughts on this documentation. Please provide your feedback:</p>
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" placeholder="John Doe">
+
+            <label>Feedback Options:</label>
+            <div>
+                <input type="checkbox" id="option1">
+                <label for="option1">Useful</label>
+            </div>
+            <div>
+                <input type="checkbox" id="option2">
+                <label for="option2">Easy to Understand</label>
+            </div>
+            <div>
+                <input type="checkbox" id="option3">
+                <label for="option3">Needs Improvement</label>
+            </div>
+
+            <label for="comments">Additional Comments:</label>
+            <textarea id="comments" rows="4" placeholder="Your comments here..."></textarea>
+
+            <button onclick="submitFeedback()">Submit</button>
+        </div>
+    </div>
+
+    <script>
+        function submitFeedback() {
+            // Implement feedback submission logic here
+        }
+    </script>
 </body>
+
 </html>
